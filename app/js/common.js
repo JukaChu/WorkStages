@@ -123,36 +123,6 @@ function hoverableMenu() {
 
 hoverableMenu();
 
-
-
-//lang
-let langBlock = [...document.querySelectorAll('.header-lang')];
-
-function openLangMob() {
-    if (langBlock.length) {
-        langBlock.forEach((btn)=> {
-            btn.addEventListener('click', () => {
-                if (btn.classList.contains('active')) {
-                    if (document.querySelector('.header-lang.active')) {
-                        document.querySelector('.header-lang.active').classList.remove('active');
-                    }
-                    btn.classList.remove('active');
-                } else {
-
-                    if (document.querySelector('.header-lang.active')) {
-                        document.querySelector('.header-lang.active').classList.remove('active');
-                    }
-                    btn.classList.add('active');
-                }
-
-            })
-        })
-    }
-}
-openLangMob();
-
-
-
 //burger
 let burger = [...document.querySelectorAll('.burger')];
 
@@ -168,6 +138,43 @@ function openMobileMenu() {
     }
 }
 openMobileMenu();
+
+//sliders
+let homeHeroSld = [...document.querySelectorAll('.js-slider.hero-home')];
+
+function homeHeroSlider() {
+    if (!homeHeroSld.length) {
+
+    } else {
+        homeHeroSld.forEach((sld) => {
+            let sldCont = sld.querySelector('.home-hero-slider');
+            let sldNext = sld.querySelector('.slides-btn--next');
+            let sldPrev = sld.querySelector('.slides-btn--prev');
+            const swiper2 = new Swiper(sldCont, {
+                // Optional parameters
+                loop: false,
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                speed: 600,
+                spaceBetween: 0,
+                navigation: {
+                    nextEl: sldNext,
+                    prevEl: sldPrev,
+                },
+                // autoplay: {
+                //     delay: 4000,
+                //     pauseOnMouseEnter: true,
+                // },
+
+
+            });
+        })
+    }
+}
+
+homeHeroSlider();
+
+//sliders
 
 
 

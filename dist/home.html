@@ -58,12 +58,7 @@
                         <img src="./img/logo-1.svg" alt="">
                     </a>
                 </div>
-                <div class="lang">
-                    <ul>
-                        <li><a href="" class="active">RU</a></li>
-                        <li><a href="">UA</a></li>
-                    </ul>
-                </div>
+                <button class="btn mod-reserve">Забронировать</button>
                 <div class="burger">
                     <span></span>
                     <span></span>
@@ -186,15 +181,48 @@
 
 
 <main>
-    <section class="hero-home">
+    <section class="hero-home js-slider">
         <div class="home-hero-slider swiper-container">
             <div class="swiper-wrapper">
                 <div class="home-hero-slide swiper-slide">
                     <div class="img">
-                        <img class="lazyload" data-src="./img/home-banner.jpg" alt="">
+
+                        <picture>
+                            <source media="(max-width:650px)" srcset="./img/home-banner-mob.jpg">
+                            <img src="./img/home-banner.jpg" alt="Flowers">
+                        </picture>
                     </div>
                     <div class="container">
                         <div class="home-hero__text">
+                            <span>Активный отдых и развлечения</span>
+                            <div class="btns">
+                                <a href="#" class="btn btn--white">Подробнее</a>
+                                <div class="play-video white">
+                                    Смотреть видео
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="home-hero-slide swiper-slide">
+                    <div class="img">
+                        <picture>
+                            <source media="(max-width:650px)" srcset="./img/home-banner-mob.jpg">
+                            <img src="./img/home-banner.jpg" alt="Flowers">
+                        </picture>
+                    </div>
+                    <div class="container">
+                        <div class="home-hero__text">
+                            <span>Активный отдых и развлечения</span>
+                            <div class="btns">
+                                <a href="#" class="btn btn--white">Подробнее</a>
+                                <div class="play-video white">
+                                    Смотреть видео
+                                </div>
+
+                            </div>
 
                         </div>
                     </div>
@@ -217,6 +245,22 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+    <section class="booking">
+        <div class="container">
+            <div class="booking__container">
+                <div class="text">
+                    <p>Бронирование номеров</p>
+                    <span>Гарантированное заселение</span>
+                </div>
+                <div class="booking-form">
+                    <p></p>
+                    <p></p>
+
+                </div>
+
+            </div>
         </div>
     </section>
 

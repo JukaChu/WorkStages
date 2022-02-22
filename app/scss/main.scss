@@ -75,24 +75,24 @@ img.lazyload, video.lazyload {
 
 .container {
   width: 100%;
-  max-width: 1324px;
-  padding: 0 12px;
+  max-width: 1332px;
+  padding: 0 16px;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
 .container-little {
   width: 100%;
-  max-width: 1162px;
-  padding: 0 12px;
+  max-width: 1170px;
+  padding: 0 16px;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
 .big-container {
   width: 100%;
-  max-width: 1864px;
-  padding: 0 12px;
+  max-width: 1872px;
+  padding: 0 16px;
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -177,6 +177,8 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
 
 
 .btn {
+  text-decoration: none;
+  outline: none;
   padding: 10px 19px;
   box-sizing: border-box;
   outline: none;
@@ -191,7 +193,7 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
   font-size: 13px;
   line-height: 1.2;
   /* identical to box height, or 154% */
-
+  font-family: $second-font;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
@@ -211,6 +213,17 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
     }
 
   }
+  &--white {
+    background: #fff;
+    color: #3A3A3A;
+    border: none;
+    padding: 11px 45px;
+    &:hover {
+      color: #fff;
+      background: $green;
+    }
+
+  }
 }
 .slides-btn {
   width: 20px;
@@ -219,6 +232,9 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
   height: 20px;
   cursor: pointer;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  &.swiper-button-disabled {
+    opacity: 0.5;
+  }
   svg {
     width: 100%;
     height: auto;
@@ -252,6 +268,102 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
     pointer-events: auto;
     opacity: 1;
   }
+}
+
+.play-video {
+  padding-left: 56px;
+  position: relative;
+  &::before {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: url("../img/play-icon.svg") no-repeat center / 13px, #E0C18D;
+    display: inline-block;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    box-shadow: 0 0 1px 9px rgba(294, 193, 141, 0.3);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, background-size 0.3s ease;
+  }
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: $second-font;
+  cursor: pointer;
+
+  transition: color 0.3s ease;
+
+  &.white {
+    color: #FFFFFF;
+  }
+  &:hover {
+    transition: color 0.3s ease;
+
+    &.white {
+      color: #E0C18D;
+    }
+    &::before {
+      box-shadow: 0 0 7px 4px rgba(294, 193, 141, 0.3);
+      transition: box-shadow 0.3s ease, background-color 0.3s ease, background-size 0.3s ease;
+    }
+  }
+}
+
+.booking {
+  width: 100%;
+
+}
+.booking__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translate(0, -50%);
+  z-index: 2;
+  position: relative;
+
+  background: #FFFFFF;
+  box-shadow: 0 4px 35px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 24px 30px;
+  box-sizing: border-box;
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    p {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: 0.05em;
+      color: #3A3A3A;
+      margin-bottom: 5px;
+    }
+    span {
+      font-family: $second-font;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 22px;
+      color: #A9A9A9;
+    }
+  }
+}
+.booking-form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px 30px;
 }
 @import 'header';
 @import 'hero-slider';
