@@ -1,0 +1,58 @@
+@media screen and (max-width: 1100px) {
+  .booking-input input {
+
+  }
+  .booking__container .text {
+    margin-right: 6%;
+  }
+  .booking__container .text p {
+    margin-bottom: 0;
+  }
+  .booking-form {
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .booking__container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px 20px;
+    .text {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
+      align-items: center;
+      p {
+        text-align: center;
+      }
+      span {
+        text-align: center;
+      }
+    }
+  }
+  .booking-form {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .booking-form {
+    flex-wrap: wrap;
+    .btn {
+      flex-grow: 0;
+      width: calc(50% - 10px);
+    }
+  }
+  .booking-input,  .booking-input.date {
+    flex-grow: 0;
+    width: calc(50% - 10px);
+  }
+}
+@media screen and (max-width: 510px) {
+  .booking-input, .booking-form .btn, .booking-input.date {
+    width: 100%;
+  }
+  .booking__container {
+    transform: translate(0, -38px);
+  }
+}

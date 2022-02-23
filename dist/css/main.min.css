@@ -452,6 +452,23 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
     .btn--white:hover {
       color: #fff;
       background: #23514C; }
+  .btn--orange {
+    background: #E0C18D;
+    color: #fff;
+    border: 1px solid #E0C18D;
+    padding: 11px 45px; }
+    .btn--orange:hover {
+      color: #E0C18D;
+      background: #fff; }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield; }
 
 .slides-btn {
   width: 20px;
@@ -595,7 +612,8 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
             align-items: flex-start;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
-            justify-content: flex-start; }
+            justify-content: flex-start;
+    margin-right: 9%; }
     .booking__container .text p {
       font-style: normal;
       font-weight: 600;
@@ -622,7 +640,121 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  gap: 20px 30px; }
+  gap: 20px 30px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
+
+.booking-input {
+  position: relative;
+  border: 1px solid #E8E4DE;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+  padding: 3px 30px 3px 10px;
+  height: 42px;
+  width: 110px; }
+  .booking-input .over {
+    width: 100%;
+    height: 100%;
+    position: relative; }
+    .booking-input .over span {
+      font-family: "Geometria", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: 0.05em;
+      color: #A9A9A9; }
+    .booking-input .over::after {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      content: '';
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      -webkit-transform: translate(0, -50%);
+          -ms-transform: translate(0, -50%);
+              transform: translate(0, -50%);
+      background: url("../img/hum-ic.svg") no-repeat center/100%; }
+  .booking-input.date {
+    width: auto;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
+    .booking-input.date .over::after {
+      background: url("../img/cale-ic.svg") no-repeat center/100%; }
+  .booking-input input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    position: absolute !important;
+    background: rgba(255, 255, 255, 0);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px 30px 3px 10px;
+    border: none;
+    outline: none;
+    vertical-align: bottom;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #3A3A3A;
+    font-family: "Geometria", sans-serif; }
+    .booking-input input::-webkit-input-placeholder {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #3A3A3A;
+      font-family: "Geometria", sans-serif; }
+    .booking-input input::-moz-placeholder {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #3A3A3A;
+      font-family: "Geometria", sans-serif; }
+    .booking-input input:-ms-input-placeholder {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #3A3A3A;
+      font-family: "Geometria", sans-serif; }
+    .booking-input input::-ms-input-placeholder {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #3A3A3A;
+      font-family: "Geometria", sans-serif; }
+    .booking-input input::placeholder {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #3A3A3A;
+      font-family: "Geometria", sans-serif; }
 
 .header {
   width: 100%;
@@ -2353,3 +2485,61 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     width: 100px !important;
     height: 100px !important;
     padding: 0 !important; } }
+
+@media screen and (max-width: 1100px) {
+  .booking__container .text {
+    margin-right: 6%; }
+  .booking__container .text p {
+    margin-bottom: 0; }
+  .booking-form {
+    gap: 20px; } }
+
+@media screen and (max-width: 1023px) {
+  .booking__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding: 30px 20px; }
+    .booking__container .text {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .booking__container .text p {
+        text-align: center; }
+      .booking__container .text span {
+        text-align: center; }
+  .booking-form {
+    width: 100%; } }
+
+@media screen and (max-width: 700px) {
+  .booking-form {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .booking-form .btn {
+      -webkit-box-flex: 0;
+          -ms-flex-positive: 0;
+              flex-grow: 0;
+      width: calc(50% - 10px); }
+  .booking-input, .booking-input.date {
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    width: calc(50% - 10px); } }
+
+@media screen and (max-width: 510px) {
+  .booking-input, .booking-form .btn, .booking-input.date {
+    width: 100%; }
+  .booking__container {
+    -webkit-transform: translate(0, -38px);
+        -ms-transform: translate(0, -38px);
+            transform: translate(0, -38px); } }
