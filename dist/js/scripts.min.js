@@ -329,32 +329,34 @@ function homeSlider() {
 
 homeSlider();
 
-//complect slider
-let complSld = [...document.querySelectorAll('.complect-slides')];
+//mini cat slider
+let miniCatlSld = [...document.querySelectorAll('.mini-cat__slider.js-slider')];
 
-function compSlider() {
-    if (!complSld.length) {
+function miniCatSlider() {
+    if (!miniCatlSld.length) {
 
     } else {
-        complSld.forEach((sld) => {
-            let sldCont = sld.querySelector('.complect-container');
-            let sldNext = sld.querySelector('.btn-slides--next');
-            let sldPrev = sld.querySelector('.btn-slides--prev');
-            let pagin = sld.querySelector('.dots');
+        miniCatlSld.forEach((sld) => {
+            let sldCont = sld.querySelector('.mini-cat__slider-container');
+            let sldNext = sld.querySelector('.slides-btn--next');
+            let sldPrev = sld.querySelector('.slides-btn--prev');
+            let pagin = sld.querySelector('.slider-pagin');
             const swiper2 = new Swiper(sldCont, {
                 // Optional parameters
                 loop: false,
-                slidesPerView: 1,
+                slidesPerView: 'auto',
                 slidesPerGroup: 1,
                 speed: 600,
-                spaceBetween: 0,
+
+                autoplay: false,
+                spaceBetween: 20,
                 navigation: {
                     nextEl: sldNext,
                     prevEl: sldPrev,
                 },
                 pagination: {
                     el: pagin,
-                    type: 'bullets',
+                    type: 'fraction',
                     bulletActiveClass: 'active',
                     bulletClass: 'single-dot',
                     bulletElement: 'div',
@@ -362,10 +364,26 @@ function compSlider() {
                     currentClass: 'current',
                     spaceBetween: 2,
                 },
-                // autoplay: {
-                //     delay: 4000,
-                //     pauseOnMouseEnter: true,
-                // },
+                breakpoints: {
+                    // when window width is >= 320px
+
+                    // when window width is >= 480px
+                    450: {
+                        slidesPerView: 2,
+                    },
+
+                    600: {
+                        slidesPerView: 3,
+                    },
+                    769: {
+                        slidesPerView: 2,
+                    },
+
+                    1025: {
+                        slidesPerView: 3,
+                    }
+                }
+
 
 
             });
@@ -373,9 +391,67 @@ function compSlider() {
     }
 }
 
-compSlider();
+miniCatSlider();
 
-//complect slider
+//mini cat slider
+
+//four seasons
+let fourSesons = [...document.querySelectorAll('.seasons.js-slider')];
+
+function seasonsSlider() {
+    if (!fourSesons.length) {
+
+    } else {
+        fourSesons.forEach((sld) => {
+            let sldCont = sld.querySelector('.seasons-container');
+            let sldNext = sld.querySelector('.slides-btn--next');
+            let sldPrev = sld.querySelector('.slides-btn--prev');
+
+            const swiper2 = new Swiper(sldCont, {
+                // Optional parameters
+                loop: false,
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                speed: 600,
+
+                autoplay: false,
+                spaceBetween: 4,
+                allowTouchMove: true,
+                draggable: false,
+                navigation: {
+                    nextEl: sldNext,
+                    prevEl: sldPrev,
+                },
+
+                breakpoints: {
+                    // when window width is >= 320px
+
+                    // when window width is >= 480px
+                    450: {
+                        slidesPerView: 2,
+                    },
+
+                    600: {
+                        slidesPerView: 3,
+                    },
+                    769: {
+                        slidesPerView: 4,
+                        allowTouchMove: false,
+                        draggable: false,
+                    },
+
+                }
+
+
+
+            });
+        })
+    }
+}
+
+seasonsSlider();
+
+//four seasons
 
 
 
@@ -387,6 +463,24 @@ compSlider();
 
 
 //sliders
+
+//faq open
+
+let faqHead = [...document.querySelectorAll('.faq-head')];
+
+function openFaq() {
+    if (faqHead.length) {
+        faqHead.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                btn.closest('.single-faq').classList.toggle('active');
+            })
+        })
+    }
+}
+
+openFaq();
+
+//faq open
 
 $('.rating-stars').raty(
     {
@@ -848,18 +942,7 @@ function openRevDet() {
 }
 openRevDet();
 
-let faqSingle = [...document.querySelectorAll('.single-faq .head')];
 
-function openFaq() {
-        if (faqSingle.length) {
-            faqSingle.forEach((btn) => {
-                btn.addEventListener('click', () => {
-                    btn.closest('.single-faq').classList.toggle('open');
-                })
-            })
-        }
-}
-openFaq();
 
 let startsRateModal = [...document.querySelectorAll('.rating-item .images .img')];
 
