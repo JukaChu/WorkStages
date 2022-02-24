@@ -1406,19 +1406,21 @@ input[type=number] {
         -ms-flex-pack: center;
             justify-content: center;
     position: relative; }
-    .seasons .container .btns .slides-btn {
-      z-index: 2;
-      position: absolute;
-      top: calc(100% + 39px);
-      right: 16px;
-      width: 27px;
-      height: 27px; }
-      .seasons .container .btns .slides-btn--prev {
-        right: 73px; }
-      .seasons .container .btns .slides-btn svg {
-        width: 100%; }
-      .seasons .container .btns .slides-btn svg path {
-        stroke: #fff; }
+    .seasons .container .btns {
+      display: none; }
+      .seasons .container .btns .slides-btn {
+        z-index: 2;
+        position: absolute;
+        top: calc(100% + 39px);
+        right: 16px;
+        width: 27px;
+        height: 27px; }
+        .seasons .container .btns .slides-btn--prev {
+          right: 73px; }
+        .seasons .container .btns .slides-btn svg {
+          width: 100%; }
+        .seasons .container .btns .slides-btn svg path {
+          stroke: #fff; }
     .seasons .container .title {
       text-align: center;
       margin: 50px 0;
@@ -3854,6 +3856,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     z-index: 2; } }
 
 @media screen and (max-width: 769px) {
+  .seasons .container .btns {
+    display: block; }
   .single-season {
     padding-top: calc(100% / 3); }
     .single-season .text::before {

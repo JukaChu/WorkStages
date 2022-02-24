@@ -148,6 +148,13 @@
 }
 
 @media screen and (max-width: 769px) {
+  .seasons {
+    .container {
+      .btns {
+        display: block;
+      }
+  }
+}
   .single-season {
     padding-top: calc(100% / 3);
     .text {
